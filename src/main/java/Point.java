@@ -32,7 +32,6 @@ public class Point
   // Returns the time; (stub)
   public ZonedDateTime getTime()
   { 
-    asd
     return null;
   }
 
