@@ -26,12 +26,13 @@ public class Point
   // Constructor; (stub)
   public Point (ZonedDateTime t, double lon, double lat, double elev)
   {
-
+    
   }
 
   // Returns the time; (stub)
   public ZonedDateTime getTime()
-  {
+  { 
+    asd
     return null;
   }
 
