@@ -23,34 +23,42 @@ public class Point
   private static final double MAX_LATITUDE = 90.0;
   private static final double MEAN_EARTH_RADIUS = 6.371009e+6;
 
+  public ZonedDateTime timestamp;
+  public double longitude;
+  public double latitude;
+  public double elevation;
+
   // Constructor; (stub)
   public Point (ZonedDateTime t, double lon, double lat, double elev)
   {
-    
+    timestamp = t;
+    longitude = lon;
+    latitude = lat;
+    elevation = elev;
   }
 
   // Returns the time; (stub)
   public ZonedDateTime getTime()
   { 
-    return null;
+    return timestamp;
   }
 
   // Returns the latitude; (stub)
   public double getLatitude()
   {
-    return 0.0;
+    return latitude;
   }
 
   //  Returns the longitude; (stub)
   public double getLongitude()
   {
-    return 0.0;
+    return longitude;
   }
 
   // Returns the elevation; (stub)
   public double getElevation()
   {
-    return 0.0;
+    return elevation;
   }
 
   // Converts input into a string; (stub)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FullTests" tests="8" skipped="0" failures="8" errors="0" timestamp="2023-02-27T11:44:56" hostname="DESKTOP-DC75NOB" time="0.03">
+<testsuite name="FullTests" tests="8" skipped="0" failures="8" errors="0" timestamp="2023-03-01T22:26:08" hostname="DESKTOP-DC75NOB" time="0.037">
   <properties/>
-  <testcase name="GPSException if seeking highest point in an empty Track" classname="FullTests" time="0.004">
+  <testcase name="GPSException if seeking highest point in an empty Track" classname="FullTests" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: Expected GPSException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected GPSException to be thrown, but nothing was thrown.
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -95,7 +95,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="GPSException if seeking lowest point in an empty Track" classname="FullTests" time="0.002">
+  <testcase name="GPSException if seeking lowest point in an empty Track" classname="FullTests" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: Expected GPSException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected GPSException to be thrown, but nothing was thrown.
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -189,7 +189,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Total distance computed correctly" classname="FullTests" time="0.001">
+  <testcase name="Total distance computed correctly" classname="FullTests" time="0.007">
     <failure message="java.lang.AssertionError: &#13;&#10;Expected: a numeric value within &lt;1.0E-5&gt; of &lt;278.53495&gt;&#13;&#10;     but: &lt;0.0&gt; differed by &lt;278.53494&gt; more than delta &lt;1.0E-5&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
 Expected: a numeric value within &lt;1.0E-5&gt; of &lt;278.53495&gt;
      but: &lt;0.0&gt; differed by &lt;278.53494&gt; more than delta &lt;1.0E-5&gt;
