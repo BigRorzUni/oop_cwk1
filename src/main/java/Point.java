@@ -23,48 +23,56 @@ public class Point
   private static final double MAX_LATITUDE = 90.0;
   private static final double MEAN_EARTH_RADIUS = 6.371009e+6;
 
-  public ZonedDateTime timestamp;
-  public double longitude;
-  public double latitude;
-  public double elevation;
+  private ZonedDateTime timestamp;
+  private double longitude;
+  private double latitude;
+  private double elevation;
 
-  // Constructor; (stub)
+  // Constructor; 
   public Point (ZonedDateTime t, double lon, double lat, double elev)
   {
+    if(lon < MIN_LONGITUDE || lon > MAX_LONGITUDE)
+    {
+      throw new GPSException("Invalid Longitude");
+    }
+    if(lat < MIN_LATITUDE || lat > MAX_LATITUDE)
+    {
+      throw new GPSException("Invalid Latitude");
+    }
     timestamp = t;
     longitude = lon;
     latitude = lat;
     elevation = elev;
   }
 
-  // Returns the time; (stub)
+  // Returns the time;
   public ZonedDateTime getTime()
   { 
     return timestamp;
   }
 
-  // Returns the latitude; (stub)
+  // Returns the latitude;
   public double getLatitude()
   {
     return latitude;
   }
 
-  //  Returns the longitude; (stub)
+  //  Returns the longitude;
   public double getLongitude()
   {
     return longitude;
   }
 
-  // Returns the elevation; (stub)
+  // Returns the elevation;
   public double getElevation()
   {
     return elevation;
   }
 
-  // Converts input into a string; (stub)
+  // Converts input into a string;
   public String toString()
   {
-    return "";
+    return String.format("(%.5f, %.5f), %.1f m", longitude, latitude, elevation);
   }
 
   // IMPORTANT: Do not alter anything beneath this comment!
