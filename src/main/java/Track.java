@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeParseException;
@@ -77,6 +79,32 @@ public class Track
       input.close();
       throw new GPSException(null);
     }
+  }
+
+  public void writeKML(String filename) throws IOException
+  {
+    String start = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n" + "\t<Placemark>\n" + "\t\t<LineString>\n" + "\t\t\t<altitudeMode>absolute</altitudeMode>\n"+"\t\t\t<coordinates>\n";
+    
+    String end = "\t\t\t</coordinates>\n" + "\t\t</LineString>\n" + "\t</Placemark>\n" + "</kml>";
+
+    //Make a new KML file with filename as its name;
+    FileWriter writer = new FileWriter(filename);
+    //BufferedWriter buffer = BufferedWriter(writer);
+
+    writer.write(start);
+    //writer.write(start);
+
+    for(int i = 1; i < size(); i++)
+    {
+      Point current = points.get(i);
+
+      String element = "\t\t\t" + current.getLongitude() + "," + current.getLatitude() + "," + current.getElevation() + "\n";
+      
+      writer.write(element);
+    }
+    
+    writer.write(end);
+    writer.close();
   }
 
   // Adds a point to the track;
