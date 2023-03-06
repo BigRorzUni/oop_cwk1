@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BasicTests" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-03-03T13:56:21" hostname="DESKTOP-DC75NOB" time="0.064">
+<testsuite name="BasicTests" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-03-06T09:42:02" hostname="DESKTOP-DC75NOB" time="0.107">
   <properties/>
-  <testcase name="Correct string representation of a Point" classname="BasicTests" time="0.023"/>
-  <testcase name="Latitude stored and retrieved correctly" classname="BasicTests" time="0.002"/>
-  <testcase name="GPSException if longitude is too low" classname="BasicTests" time="0.002"/>
+  <testcase name="Correct string representation of a Point" classname="BasicTests" time="0.041"/>
+  <testcase name="Latitude stored and retrieved correctly" classname="BasicTests" time="0.004"/>
+  <testcase name="GPSException if longitude is too low" classname="BasicTests" time="0.003"/>
   <testcase name="GPSException when retrieving from an empty Track" classname="BasicTests" time="0.002"/>
-  <testcase name="Appropriate exception if data file does not exist" classname="BasicTests" time="0.003"/>
-  <testcase name="Points read into a Track correctly" classname="BasicTests" time="0.004"/>
-  <testcase name="GPSException if latitude is too high" classname="BasicTests" time="0.001"/>
+  <testcase name="Appropriate exception if data file does not exist" classname="BasicTests" time="0.005"/>
+  <testcase name="Points read into a Track correctly" classname="BasicTests" time="0.007"/>
+  <testcase name="GPSException if latitude is too high" classname="BasicTests" time="0.002"/>
   <testcase name="GPSException if index is too low" classname="BasicTests" time="0.001"/>
   <testcase name="GPSException if longitude is too low" classname="BasicTests" time="0.002"/>
   <testcase name="GPSException if index is too high" classname="BasicTests" time="0.001"/>
-  <testcase name="Elevation stored and retrieved correctly" classname="BasicTests" time="0.001"/>
+  <testcase name="Elevation stored and retrieved correctly" classname="BasicTests" time="0.002"/>
   <testcase name="Time stored and retrieved correctly" classname="BasicTests" time="0.001"/>
-  <testcase name="Longitude stored and retrieved correctly" classname="BasicTests" time="0.001"/>
-  <testcase name="Size of a Track returned correctly" classname="BasicTests" time="0.001"/>
-  <testcase name="GPSException if data file has fewer than 4 columns" classname="BasicTests" time="0.002"/>
-  <testcase name="Old data cleared when reading a new file" classname="BasicTests" time="0.002"/>
-  <testcase name="GPSException if longitude is too high" classname="BasicTests" time="0.001"/>
-  <testcase name="Points stored in and retrieved from a Track correctly" classname="BasicTests" time="0.001"/>
+  <testcase name="Longitude stored and retrieved correctly" classname="BasicTests" time="0.002"/>
+  <testcase name="Size of a Track returned correctly" classname="BasicTests" time="0.002"/>
+  <testcase name="GPSException if data file has fewer than 4 columns" classname="BasicTests" time="0.003"/>
+  <testcase name="Old data cleared when reading a new file" classname="BasicTests" time="0.004"/>
+  <testcase name="GPSException if longitude is too high" classname="BasicTests" time="0.002"/>
+  <testcase name="Points stored in and retrieved from a Track correctly" classname="BasicTests" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
