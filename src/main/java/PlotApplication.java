@@ -25,11 +25,11 @@ public class PlotApplication extends Application
 
     if(l.size() == 1)
     {
-    String trackArg = l.get(0);
+      String trackArg = l.get(0);
 
-    Track track = new Track(trackArg);
+      Track track = new Track(trackArg);
 
-    stage.setTitle("Elevation Plot");
+      stage.setTitle("Elevation Plot");
         //defining the axes
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
@@ -77,7 +77,6 @@ public class PlotApplication extends Application
 
   public static void main(String[] args)
   {
-    // If attempting the Advanced task, uncomment the line below
     launch(args);
   }
 }
