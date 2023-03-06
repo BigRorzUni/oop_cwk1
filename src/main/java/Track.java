@@ -94,9 +94,9 @@ public class Track
     writer.write(start);
     //writer.write(start);
 
-    for(int i = 1; i < size(); i++)
+    for(Point current : points)
     {
-      Point current = points.get(i);
+      //Point current = points.get(i);
 
       String element = "\t\t\t" + current.getLongitude() + "," + current.getLatitude() + "," + current.getElevation() + "\n";
       
@@ -137,11 +137,11 @@ public class Track
     {
       Point currentLowest = points.get(0);
 
-      for(int i = 1; i < size(); i++)
+      for(Point current : points)
       {
-        if(points.get(i).getElevation() < currentLowest.getElevation())
+        if(current.getElevation() < currentLowest.getElevation())
         {
-          currentLowest = points.get(i);
+          currentLowest = current;
         }
       }
 
@@ -158,11 +158,11 @@ public class Track
     {
       Point currentHighest = points.get(0);
 
-      for(int i = 1; i < size(); i++)
+      for(Point current : points)
       {
-        if(points.get(i).getElevation() > currentHighest.getElevation())
+        if(current.getElevation() > currentHighest.getElevation())
         {
-          currentHighest = points.get(i);
+          currentHighest = current;
         }
       }
 
@@ -180,12 +180,17 @@ public class Track
     {
       for(int i = 0; i < size() - 1; i++)
       {
-        dist += Point.greatCircleDistance(points.get(i), points.get(i+1));
+        dist += getDistance(points.get(i), points.get(i+1));
       }
       return dist;
     }
 
     throw new GPSException(null);
+  }
+
+  public double getDistance(Point a, Point b)
+  {
+    return Point.greatCircleDistance(a, b);
   }
 
   // Returns the average speed;
