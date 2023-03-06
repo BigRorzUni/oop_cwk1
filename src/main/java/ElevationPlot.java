@@ -7,14 +7,8 @@ import java.io.IOException;
  * @author Nick Efford
  */
 public class ElevationPlot {
-  public static void main(String[] args) {
-    if(args.length == 1)
-    {
+  public static void main(String[] args) 
+  {
       PlotApplication.main(args);
-
-      System.exit(0);
-    }
-    System.err.printf("No filename supplied\n");
-    System.exit(0);
   }
 }

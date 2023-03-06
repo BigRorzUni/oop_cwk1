@@ -22,6 +22,9 @@ public class PlotApplication extends Application
 
     Parameters pms = getParameters();
     List<String> l = pms.getRaw();
+
+    if(l.size() == 1)
+    {
     String trackArg = l.get(0);
 
     Track track = new Track(trackArg);
@@ -64,6 +67,12 @@ public class PlotApplication extends Application
        
         stage.setScene(scene);
         stage.show();
+      }
+      else
+      {
+        System.err.printf("No filename supplied\n");
+        System.exit(-1);
+      }
   }
 
   public static void main(String[] args)
