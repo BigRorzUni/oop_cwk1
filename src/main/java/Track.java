@@ -94,9 +94,9 @@ public class Track
     writer.write(start);
     //writer.write(start);
 
-    for(int i = 1; i < size(); i++)
+    for(Point current : points)
     {
-      Point current = points.get(i);
+      //Point current = points.get(i);
 
       String element = "\t\t\t" + current.getLongitude() + "," + current.getLatitude() + "," + current.getElevation() + "\n";
       
