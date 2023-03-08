@@ -9,9 +9,10 @@ import java.io.IOException;
 public class ConvertToKML {
   public static void main(String[] args)
   {
-    //Take in 2 command line arguments;
+    //Check that we have taken in 2 command line arguments;
     if(args.length == 2)
     {
+      //Attempt to create a track and write it into a KML file;
       try
       {
         Track track = new Track(args[0]);
@@ -26,6 +27,7 @@ public class ConvertToKML {
         System.exit(-1);
       }
     }
+
     System.err.printf("No filename supplied\n");
     System.exit(0);
   }

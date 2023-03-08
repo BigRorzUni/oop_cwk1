@@ -15,8 +15,7 @@ import static java.lang.Math.toRadians;
  */
 public class Point 
 {
-  // Constants useful for bounds checking, etc
-
+  //Constants useful for bounds checking;
   private static final double MIN_LONGITUDE = -180.0;
   private static final double MAX_LONGITUDE = 180.0;
   private static final double MIN_LATITUDE = -90.0;
@@ -31,6 +30,7 @@ public class Point
   // Constructor; 
   public Point (ZonedDateTime t, double lon, double lat, double elev)
   {
+    //Checks that latitude and longitude are within the accepted bounds;
     if(lon < MIN_LONGITUDE || lon > MAX_LONGITUDE)
     {
       throw new GPSException("Invalid Longitude");

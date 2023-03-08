@@ -1,4 +1,3 @@
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -54,17 +53,21 @@ public class Track
       points.add(toAdd);
     }
 
+    //Close file once finished;
     input.close();
   }
 
+  //Method to convert lines in file into points;
   public Point parseLine(String[] line, Scanner input)
   {
+    //Check for correct data layout;
     if(line.length != 4)
     {
       input.close();
       throw new GPSException("File does not have the correct columns");
     }
 
+    //Attempt to parse each element as it's predicted data type;
     try
     {
       ZonedDateTime t = ZonedDateTime.parse(line[0]);
@@ -77,32 +80,34 @@ public class Track
     catch (DateTimeParseException | NumberFormatException e)
     {
       input.close();
-      throw new GPSException(null);
+      throw new GPSException("Issue with data formats");
     }
   }
 
+  //Method to create a KML file from a track;
   public void writeKML(String filename) throws IOException
   {
+    //These strings contain the skeleton for a KML file;
     String start = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n" + "\t<Placemark>\n" + "\t\t<LineString>\n" + "\t\t\t<altitudeMode>absolute</altitudeMode>\n"+"\t\t\t<coordinates>\n";
     
     String end = "\t\t\t</coordinates>\n" + "\t\t</LineString>\n" + "\t</Placemark>\n" + "</kml>";
 
     //Make a new KML file with filename as its name;
     FileWriter writer = new FileWriter(filename);
-    //BufferedWriter buffer = BufferedWriter(writer);
 
+    //Write in the initial KML skeleton;
     writer.write(start);
-    //writer.write(start);
 
     for(Point current : points)
     {
-      //Point current = points.get(i);
-
+      //This string contains the correct KML format for the coordinates;
       String element = "\t\t\t" + current.getLongitude() + "," + current.getLatitude() + "," + current.getElevation() + "\n";
       
+      //Write the coordinates into the file;
       writer.write(element);
     }
     
+    //Finish the KML skeleton and close the file;
     writer.write(end);
     writer.close();
   }
@@ -130,7 +135,7 @@ public class Track
     return points.size();
   }
 
-  // Returns the lowest point in the track; (stub)
+  // Returns the lowest point in the track;
   public Point lowestPoint()
   {
     if(size() > 0)
@@ -151,7 +156,7 @@ public class Track
     throw new GPSException(null);
   }
 
-  // Returns the highest point; (stub)
+  // Returns the highest point;
   public Point highestPoint()
   {
     if(size() > 0)
@@ -176,6 +181,7 @@ public class Track
   public double totalDistance()
   {
     double dist = 0.0;
+
     if(size() >= 2)
     {
       for(int i = 0; i < size() - 1; i++)

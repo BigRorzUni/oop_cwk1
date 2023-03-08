@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /**
  * Launcher for application to plot elevations of a GPS track, needed
  * for the Advanced task of COMP1721 Coursework 1.
